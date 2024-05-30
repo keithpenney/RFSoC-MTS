@@ -6,7 +6,7 @@
 
 # Build MTS necessary patch to xrfdc package
 echo "Cloning the PYNQ repository"
-git clone https://github.com/xilinx/PYNQ
+git clone https://github.com/keithpenney/PYNQ
 cd PYNQ
 git apply ../boards/patches/xrfdc_mts.patch
 

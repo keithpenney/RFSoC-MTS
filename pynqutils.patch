@@ -1,0 +1,19 @@
+diff --git a/pynqutils/setup_utils/deliver_notebooks.py b/pynqutils/setup_utils/deliver_notebooks.py
+index a1ffebe..bfb1cde 100644
+--- a/pynqutils/setup_utils/deliver_notebooks.py
++++ b/pynqutils/setup_utils/deliver_notebooks.py
+@@ -385,7 +385,13 @@ def _download_file(download_link, path, md5sum=None, unpack=False):
+     import hashlib
+     import magic
+     tmp_file = tempfile.mkstemp()[1]
+-    with urllib.request.urlopen(download_link) as response, \
++    headers = {
++        "User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/115.0",
++        "Accept": "*/*",
++        "Accept-Encoding": "foo",
++    }
++    url = urllib.request.Request(download_link, headers=headers)
++    with urllib.request.urlopen(url) as response, \
+             open(tmp_file, "wb") as out_file:
+         data = response.read()
+         out_file.write(data)
