@@ -12,7 +12,7 @@ git clone https://github.com/Xilinx/PYNQ
 cd PYNQ
 git apply ../boards/patches/xrfdc_mts.patch
 
-pushd /usr/local/share/pynq-venv/lib/python3.10/site-packages/pynqutils
+pushd /usr/local/share/pynq-venv/lib/python3.10/site-packages
 echo "INFO: patching pynqutils begin"
 git apply $SCRIPT_DIR/pynqutils.patch
 echo "INFO: patching pynqutils done"

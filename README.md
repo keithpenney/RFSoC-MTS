@@ -1,3 +1,8 @@
+## Fork gets around AMD server issues with wget and Python urllib
+Someone changed the policies on the AMD servers that host critical files for this repo.  This fork applies
+a fairly simple patch to the pre-installed `pynqutils` on a pre-built PYNQ 3.0.1 image (only tested with
+ZCU208) before continuing with the installation.
+
 <img src="./images/AMD_Zynq_RFSoC.png" width="33%"/>
 
 # RFSOC-PYNQ Multi-Tile Synchronization Overlay
