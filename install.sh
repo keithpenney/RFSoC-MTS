@@ -5,8 +5,6 @@
 #!/bin/bash
 
 SCRIPT_DIR=$( realpath $( dirname -- "$0"; ) )
-echo $SCRIPT_DIR
-exit
 
 # Build MTS necessary patch to xrfdc package
 echo "Cloning the PYNQ repository"
