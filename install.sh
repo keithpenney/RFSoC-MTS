@@ -4,11 +4,19 @@
 # ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- --
 #!/bin/bash
 
+SCRIPT_DIR=$( dirname -- "$0"; )
+
 # Build MTS necessary patch to xrfdc package
 echo "Cloning the PYNQ repository"
-git clone https://github.com/keithpenney/PYNQ
+git clone https://github.com/Xilinx/PYNQ
 cd PYNQ
 git apply ../boards/patches/xrfdc_mts.patch
+
+pushd /usr/local/share/pynq-venv/lib/python3.10/site-packages/pynqutils
+echo "INFO: patching pynqutils begin"
+git apply $SCRIPT_DIR/pynqutils.patch
+echo "INFO: patching pynqutils done"
+popd
 
 pushd sdbuild/packages/xrfdc
 . pre.sh

@@ -27,7 +27,7 @@ Follow the instructions below to install the "mts" overlay. **You will need to g
 Run the code below in the Jupyter terminal to install the RFSoC-MTS project files.
 
 ```sh
-git clone https://github.com/Xilinx/RFSoC-MTS.git
+git clone https://github.com/keithpenney/RFSoC-MTS.git
 cd RFSoC-MTS
 ./install.sh
 ```
